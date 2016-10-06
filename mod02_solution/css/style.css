@@ -82,3 +82,7 @@ article {
 footer {
 	line-height: 80px;
 }
+footer a {
+	text-decoration: none;
+	color: inherit;
+}
