@@ -62,9 +62,11 @@ article {
 @media (min-width: 768px) and (max-width: 991px) {
 	section {
 		width: 48%;
+		float: left;
 	}
 	section:nth-of-type(2) {
 		margin-left: 0;
+		float: right;
 	}
 	section:last-child {
 		width: 98%;
