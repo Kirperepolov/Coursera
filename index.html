@@ -2,48 +2,82 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- to set the real scale of a page -->
 	<title>Kir Perep&ouml;lov's page</title>
 	<link rel="stylesheet" href="css/css_reset.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header>
-		<div class="personal">
-			<img src="img/21110052.png" alt="Kir Perep&ouml;lov" width="100px" height="100px">
-			<h1>Kir Perep&ouml;lov's page</h1>
-		</div>
-		<nav>
-			<ul>
-				<a href="#Solutions">
-					<li>Coursera Solutions</li>
-				</a>
-				<a href="https://github.com/Kirperepolov/">
-					<li>My GitHub</li>
-				</a>
-				<a href="https://ua.linkedin.com/in/kir-perepyolov-b4255717">
-					<li>Contacts</li>
-				</a>
-			</ul>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container">
+				<div class="personal">
+					<a href="index.html" class="pull-left visible-md visible-lg">
+						<div id="logo-img"></div>
+					</a>
+					<!-- <img src="img/21110052.png" alt="Kir Perep&ouml;lov" width="100px" height="100px" class="visible-md visible-lg"> -->
+					<div class="navbar-brand">
+						<a href="index.html">
+							<h1>Kir Perep&ouml;lov's page</h1>
+						</a>
+					</div>
+				</div>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div id="bs-example-navbar-collapse-1">
+					<ul id="nav-list" class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#Solutions">Coursera Solutions</a>
+						</li>
+						<li>
+							<a href="https://github.com/Kirperepolov/">My GitHub</a>
+						</li>
+						<li>
+							<a href="https://ua.linkedin.com/in/kir-perepyolov-b4255717">Contacts</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</nav>
 	</header>
 	<hr>
 	<main>
-		<h2 id="Solutions">Solutions</h2>
-		<section class="col-xs-12 col-sm-6 col-md-3 col-lg-4 moduleSolution">
-			<h3>Module 2</h3>
-			<img src="img/Mod2.png" alt="Module 2">
-			<article>
-				<a href="mod02_solution/index.html">Check the result</a>
-			</article>
-		</section>
+		<div class="colxs-12 col-sm-12 col-md-12 col-lg-12 courseraSubms">
+			<h2 id="Solutions">Coursera Modules Solutions</h2>
+			<section class="col-xs-12 col-sm-6 col-md-3 col-lg-4 moduleSolution">
+				<h3>Module 2</h3>
+				<img src="img/Mod2.png" alt="Module 2">
+				<article>
+					<a href="mod02_solution/index.html">Check the result</a>
+				</article>
+			</section>
+
+			<section class="col-xs-12 col-sm-6 col-md-3 col-lg-4 moduleSolution">
+				<h3>Module 3</h3>
+				<img src="img/Mod3.png" alt="Module 3">
+				<article>
+					<a href="mod03_solution/index.html">Check the result</a>
+				</article>
+			</section>
+
+		</div>
 	</main>
+
+
 	<hr>
+
 	<footer>
 		<a href="#">
-	&copy; Kir Perep&ouml;lov, 2016
-	</a>
+			&copy; Kir Perep&ouml;lov, 2016
+		</a>
 	</footer>
-	<script src="js/bootstrap.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
