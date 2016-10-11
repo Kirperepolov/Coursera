@@ -2,12 +2,77 @@ html {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 12pt;
 }
+body {
+	color: #000;
+}
 h1 {
-	text-align: center;
 	font-size: 1.75em;
 }
+.container{
+	padding: 0;
+}
+/*HEADER START*/
+.navbar-default .navbar-brand {
+	color: #000;
+}
+.navbar-default .navbar-toggle {
+	border-color: #000;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+	border-color: #dadada;
+	background-color: #888;
+}
+.navbar-default .navbar-toggle .icon-bar  {
+	background-color: #000;
+}
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:hover .icon-bar {
+	background-color: #dadada;
+}
+.navbar {
+	background-color: #888;
+	border: 1px solid #000;
+	border-radius: 0;
+}
+.navbar-nav {
+	background-color: #ddd;
+	margin: 0;
+	border: 1px solid #000;
+}
+.navbar-collapse {
+	padding: 0;
+}
+.navbar-nav li{
+	border: 1px solid #000;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>li>a {
+	color: #000;
+}
+/*HEADER END*/
 
+/*MAIN START*/
 
+.menu-item {
+	background-color: #888;
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+}
+.menu-item a {
+	color: inherit;
+	text-decoration: none;
+}
+.menu-item a:hover {
+	color: #dadada;
+}
+
+/*MAIN END*/
+
+/*FOOTER START*/
 footer {
 	line-height: 80px;
 }
