@@ -99,9 +99,11 @@ $ajaxUtils.sendGetRequest(
                     "randomCategoryShortName",
                     chosenCategoryShortName);
                     insertHtml("#main-content", homeHtml);
+
+                    insertHtml("#main-content", homeHtml); //inserting the homeHtml into the home screen
         },
         false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-      insertHtml("#main-content", homeHtml); //inserting the homeHtml into the home screen
+      
   },
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
