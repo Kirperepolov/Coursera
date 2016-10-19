@@ -22,12 +22,7 @@ header {
 	margin: 10px 15px 10px 0;
 	background-size: 100%;
 }
-/*.personal {
-	display: flex;
-	justify-content: flex-start;
-	align-content: center;
-	}*/
-	.navbar {
+.navbar {
 		border-radius: 0;
 		border: none;
 		width: 100%;
@@ -43,38 +38,77 @@ header {
 		color: #000;
 		text-shadow: 1px 1px 1px var(--grey);
 	}
-/*nav>ul {
-	list-style: none;
-	display: flex;
-	justify-content: space-around;
-	margin: 0px;
-}
-nav a,
-nav a:hover {
-	text-decoration: none;
-	color: inherit;
-}
-nav li {
-	line-height: 100px;
-	background-color: transparent;
-	margin: 0px;
-	font-size: 1.2em;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-transform: uppercase;
-}
-nav li:hover {
-	background-image: linear-gradient(180deg, #d8d8d8, transparent);
-}
-hr {
-	background-color: var(--grey);
-	height: 2px;
-	border: 0px;
-	}*/
-
 	/* END HEADER */
 
-	/********** Large devices only **********/
+		/*Clearfix*/
+	main:after,
+	footer:before {
+		clear: both;
+		content: '';
+		display: table;
+	}
+	main {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: var(--light-grey)
+	}
+	.moduleSolution {
+		min-height: 200px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-ms-align-items: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	.moduleSolution *,
+	h2,
+	h2 a {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		text-decoration: none;
+		color: inherit;
+	}
+	h2 a:hover,
+	h2 a:focus {
+		color: inherit;
+	}
+	.moduleSolution article {
+		display: block;
+		border: 1px solid var(--grey);
+		border-radius: 5px;
+		height: 2.2em;
+		text-decoration: none;
+		color: inherit;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 3px;
+
+	}
+	.moduleSolution article:hover {
+		background-color: #e6e6e6;
+	}
+
+	.moduleSolution img {
+		height: 214px;
+		width: 240px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+
+	/*FOOTER*/
+	footer {
+		line-height: 80px;
+	}
+	footer a {
+		text-decoration: none;
+		color: inherit;
+	}
+/*END FOOTER*/
+
+/********** Large devices only **********/
 	@media (min-width: 1200px) {
 		#collapsable-nav {
 			float:right;
@@ -109,64 +143,3 @@ hr {
 		/* End Header */
 
 	}
-
-
-	/*Clearfix*/
-	main:after,
-	footer:before {
-		clear: both;
-		content: '';
-		display: table;
-	}
-	main {
-		margin-top: 10px;
-		margin-bottom: 10px;
-		background-color: var(--light-grey)
-	}
-	.moduleSolution {
-		min-height: 200px;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		-ms-align-items: center;
-		flex-direction: column;
-		align-items: center;
-	}
-	.moduleSolution *,
-	h2 {
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-	}
-	.moduleSolution a {
-		display: block;
-		border: 1px solid var(--grey);
-		border-radius: 5px;
-		height: 2.2em;
-		text-decoration: none;
-		color: inherit;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		padding: 3px;
-	}
-	.moduleSolution a:hover {
-		background-color: #e6e6e6;
-	}
-
-	.moduleSolution img {
-		height: 214px;
-		width: 240px;
-		box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	}
-
-	/*FOOTER*/
-	footer {
-		line-height: 80px;
-	}
-	footer a {
-		text-decoration: none;
-		color: inherit;
-	}
-/*END FOOTER*/

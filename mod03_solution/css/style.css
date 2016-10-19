@@ -30,6 +30,10 @@ h1 {
 .navbar-default .navbar-toggle:hover .icon-bar {
 	background-color: #dadada;
 }
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form {
+	border: none;
+}
 .navbar {
 	background-color: #888;
 	border: 1px solid #000;
