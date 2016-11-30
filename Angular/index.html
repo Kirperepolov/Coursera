@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myFirstApp">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,21 @@
   <script src="script/script.js" charset="utf-8"></script>
   <title>Angular app</title>
 </head>
-<body>
+<body ng-app="nameCalculator">
+  <h1>Angular application</h1>
+<div ng-controller="NameCalculatorController">
+  <div>
+    <p>Type your text here</p>
+    <input type="text"
+    ng-model="name"
+    ng-keyup = "displayNumeric()">
+  </div>
+  <div>
+    Total value of the typed text is:
+    {{totalValue}}
+  </div>
+</div>
 
-  
 
 </body>
 </html>
