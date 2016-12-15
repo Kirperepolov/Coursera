@@ -1,0 +1,14 @@
+<br><br><br>
+
+<div class="row">
+  <div class="col-sm-2">NAME</div>
+  <div class="col-sm-2">Short name</div>
+  <div class="col-sm-8">description</div>
+</div>
+<div class="row" ng-repeat="item in items">
+
+      <div class="col-sm-2">{{item.name}}</div>
+      <div class="col-sm-2">{{item.short_name}}</div>
+      <div class="col-sm-6">{{item.description}}</div>
+      <button class="col-sm-2" ng-click="#">Don't want this one!</button>
+</div>
