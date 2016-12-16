@@ -18,8 +18,25 @@
     </div>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="ctrl.found" on-remove="...."></found-items>
-    
+    <found-items found-items="ctrl" ></found-items>
+
+    <!-- <div >
+      <br><br><br>
+
+      <div class="row">
+        <div class="col-sm-2">NAME</div>
+        <div class="col-sm-2">Short name</div>
+        <div class="col-sm-8">description</div>
+      </div>
+
+      <div class="row" ng-repeat="item in ctrl.found">
+
+            <div class="col-sm-2">{{item.name}}</div>
+            <div class="col-sm-1">{{item.short_name}}</div>
+            <div class="col-sm-7">{{item.description}}</div>
+            <button class="col-sm-2" ng-click="ctrl.removeItem($index)">Don't want this one!</button>
+      </div>
+    </div> -->
   </div>
   <script src="script/angular.min.js" charset="utf-8"></script>
   <script src="script/app.js" charset="utf-8"></script>

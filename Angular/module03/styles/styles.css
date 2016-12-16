@@ -9,6 +9,7 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
+.narrow-button
 .loader {
   display: none;
   margin-left: 5px;
@@ -23,6 +24,13 @@ input[type="text"] {
   transform: translateZ(0);
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
+}
+
+
+.narrow-button::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 .loader,
 .loader:after {

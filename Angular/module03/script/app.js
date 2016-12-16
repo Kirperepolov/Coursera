@@ -3,6 +3,7 @@
 
   angular.module('NarrowItDownApp',[])
   .controller('NarrowItDownController',NarrowItDownController)
+  .controller('FoundItemsDirectiveController',FoundItemsDirectiveController)
   .service('MenuSearchService',MenuSearchService)
   .directive('foundItems',foundItemsDirective);
   //
@@ -11,13 +12,12 @@
       // template: '{{ctrl.searchItem}}'
       templateUrl: 'foundItems.html',
       scope: {
-        items: '=foundItems'
+        items: '<foundItems'
         // myTitle: '@title',
         // onRemove: '&'
       },
-      controller: NarrowItDownController,
-      controllerAs: 'ctrl',
-      bindToController: true,
+      // controller: 'FoundItemsDirectiveController as items',
+      // bindToController: true,
       restrict:'E'
       //     // link: ShoppingListDirectiveLink,
       // transclude: true
@@ -25,6 +25,17 @@
 
     return ddo;
   };
+
+  function FoundItemsDirectiveController() {
+  var scope = this;
+
+  scope.nothingFound = function () {
+    if (scope.items.found.length) {
+      return true;
+    }
+    return false;
+  };
+}
   //
   //
   // /**
@@ -38,11 +49,14 @@
     var ctrl = this;
     ctrl.found = MenuSearchService.getFoundItems();
     ctrl.searchItem="";
-
+    ctrl.found;
 
     ctrl.find = function(searchItem){
-      MenuSearchService.getMatchedMenuItems(searchItem);
-      // ctrl.found = MenuSearchService.foundItems;
+      var foundPromise = MenuSearchService.getMatchedMenuItems(searchItem);
+
+      foundPromise.then(function(list){
+                  ctrl.found=list;
+                }).catch(error=>console.log(error.message));
     };
 
     ctrl.removeItem = function(itemIndex){
@@ -65,27 +79,28 @@
   function MenuSearchService($http){
     var service = this;
 
-    var foundItems = [];
+
     service.getMatchedMenuItems = function(searchTerm){
       let path = 'https://davids-restaurant.herokuapp.com/menu_items.json'
+      service.foundItems = [];
 
       return $http.get(path)
-      .then(function (result) {
-        // process result and only keep items that match
-        let menu = result.data.menu_items;
-        searchTerm = searchTerm.toLowerCase();
-        // let foundItems = [];
+              .then(function (result) {
+                // process result and only keep items that match
+                let menu = result.data.menu_items;
+                searchTerm = searchTerm.toLowerCase();
+                // let foundItems = [];
 
-        for (let i=0;i<menu.length;i++){
-          if (menu[i].description.toLowerCase().indexOf(searchTerm)!==-1){
-            foundItems.push(menu[i]);
-          }
-        }
-        //
-        // return processed items
-        return foundItems;
-      })
-      .catch(error=>error.message);
+                for (let i=0;i<menu.length;i++){
+                  if (menu[i].description.toLowerCase().indexOf(searchTerm)!==-1){
+                    service.foundItems.push(menu[i]);
+                  }
+                }
+                //
+                // return processed items
+                return service.foundItems;
+              })
+              .catch(error=>error.message);
     };
 
     service.removeItem = function (itemIndex) {
@@ -93,7 +108,7 @@
     };
 
     service.getFoundItems = function(){
-      return foundItems;
+      return service.foundItems;
     };
   };
   //
