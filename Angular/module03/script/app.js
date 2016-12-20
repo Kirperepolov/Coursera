@@ -16,7 +16,8 @@
     var ddo = {
       templateUrl: 'foundItems.html',
       scope: {
-        items: '<foundItems'
+        items: '<foundItems',
+        onRemove: '&'
       },
       controller: 'FoundItemsDirectiveController as itemsCtrl',
       bindToController: true,
@@ -46,9 +47,9 @@
    * @return {type}  description
    */
   itemsCtrl.nothingFound = function () {
-    if (itemsCtrl.items.found === undefined){
+    if (itemsCtrl.items === undefined){
       return "show nothing";
-    } else if (itemsCtrl.items.found.length>0) {
+    } else if (itemsCtrl.items.length>0) {
       return "show List";
     }
     return "error";

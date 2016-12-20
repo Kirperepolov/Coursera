@@ -12,12 +12,12 @@
     </div>
   </div>
 
-  <div class="row" ng-repeat="item in itemsCtrl.items.found">
+  <div class="row" ng-repeat="item in itemsCtrl.items">
 
         <div class="col-sm-2">{{item.name}}</div>
         <div class="col-sm-2">{{item.short_name}}</div>
         <div class="col-sm-6">{{item.description}}</div>
-        <button class="col-sm-2" ng-click="itemsCtrl.items.removeItem($index)">Don't want this one!</button>
+        <button class="col-sm-2" ng-click="itemsCtrl.onRemove({index: $index})">Don't want this one!</button>
   </div>
 </div>
 <div class="alert alert-warning" ng-if="itemsCtrl.nothingFound()==='error'">
