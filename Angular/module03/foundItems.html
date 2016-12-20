@@ -1,18 +1,19 @@
 <div>
-  <br><br><br>
 
-  <div class="row" ng-if="items.found.length">
+  <div class="row" ng-if="itemsCtrl.nothingFound()==='show List'">
     <div class="col-sm-2">NAME</div>
     <div class="col-sm-2">Short name</div>
     <div class="col-sm-8">description</div>
   </div>
 
-  <div class="row" ng-repeat="item in items.found">
+  <div class="row" ng-repeat="item in itemsCtrl.items.found">
 
         <div class="col-sm-2">{{item.name}}</div>
         <div class="col-sm-1">{{item.short_name}}</div>
         <div class="col-sm-7">{{item.description}}</div>
-        <button class="col-sm-2" ng-click="items.removeItem($index)">Don't want this one!</button>
+        <button class="col-sm-2" ng-click="itemsCtrl.items.removeItem($index)">Don't want this one!</button>
   </div>
 </div>
-<div class="alert alert-warning" ng-hide="items.found.length">Nothing found</div>
+<div class="alert alert-warning" ng-if="itemsCtrl.nothingFound()==='error'">
+  Nothing found
+</div>

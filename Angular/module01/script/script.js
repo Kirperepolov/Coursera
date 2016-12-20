@@ -61,7 +61,7 @@
      */
     function lunchMessage(string){
       //as the spaces doesn't influence I decided to delete all of them
-      // to make the next handlinh easier
+      // to make the next handling easier
       string = string.replace(/ /gi,'');
       var lunchListToArray = string.split(',');
       //by the .filter I discard empty inputs

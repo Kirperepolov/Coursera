@@ -8,7 +8,8 @@
 
 
   /**
-   * ToBuyController - this controller i supposed for for the toBuyList managing
+   * ToBuyController - this controller I supposed to use for
+   * the toBuyList managing
    *
    * @param  {function} ShoppingListCheckOffService a singleton service for
    *  data storing and sharing
