@@ -1,0 +1,17 @@
+.browser {
+  min-height: 16px;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+}
+.ie {
+  @extend .browser;
+  background-image: url(../img/browser_ie.png);
+}
+.cr {
+  @extend .browser;
+  background-image: url(../img/browser_cr.png);
+}
+.fx {
+  @extend .browser;
+  background-image: url(../img/browser_fx.png);
+}

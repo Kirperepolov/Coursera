@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app="NarrowItDownApp">
+   <div class="container" ng-controller="NarrowItDownController as ctrl">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control" ng-model="ctrl.searchItem">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="ctrl.find(ctrl.searchItem)">Narrow It Down For Me!</button>
+    </div>
+
+    <!-- found-items should be implemented as a component -->
+    <found-items found-items="ctrl.found" on-remove="ctrl.removeItem(index)">
+      
+    </found-items>
+
+    <!-- <div >
+      <br><br><br>
+
+      <div class="row">
+        <div class="col-sm-2">NAME</div>
+        <div class="col-sm-2">Short name</div>
+        <div class="col-sm-8">description</div>
+      </div>
+
+      <div class="row" ng-repeat="item in ctrl.found">
+
+            <div class="col-sm-2">{{item.name}}</div>
+            <div class="col-sm-1">{{item.short_name}}</div>
+            <div class="col-sm-7">{{item.description}}</div>
+            <button class="col-sm-2" ng-click="ctrl.removeItem($index)">Don't want this one!</button>
+      </div>
+    </div> -->
+  </div>
+  <script src="script/angular.min.js" charset="utf-8"></script>
+  <script src="script/app.js" charset="utf-8"></script>
+</body>
+</html>
