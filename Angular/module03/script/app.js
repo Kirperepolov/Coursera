@@ -51,7 +51,7 @@
       return "show nothing";
     } else if (itemsCtrl.items.length>0) {
       return "show List";
-    }
+    };
     return "error";
   };
 }
