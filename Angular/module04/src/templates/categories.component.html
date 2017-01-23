@@ -1,0 +1,9 @@
+
+<div ng-repeat = "categ in $ctrl.categories" class="row">
+  <div class="col-sm-3 col-xs-12">
+    <a ui-sref="items({categoryShortName:categ.short_name})">
+      <span class="glyphicon glyphicon-record"></span> {{categ.name}}
+    </a>
+  </div>
+  <div class="col-sm-9 hidden-xs" ng-if="categ.special_instructions">{{categ.special_instructions}}</div>
+</div>

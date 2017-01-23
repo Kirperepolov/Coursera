@@ -1,0 +1,20 @@
+<div class="container">
+  <h2 class="text-center">The details about {{itemsCtrl.category.name}} category</h2>
+  <hr>
+  <a ui-sref="home">Home</a> > <a ui-sref="categories">Categories</a>
+  <hr>
+  <div class="row">
+    <div class="col-sm-3 col-xs-4">
+      Name
+    </div>
+    <div class="col-sm-2 col-xs-4">
+      Small portion price
+    </div>
+    <div class="col-sm-2 col-xs-4">
+      Large portion price
+    </div>
+    <div class="col-sm-5 hidden-xs">Description</div>
+  </div>
+  <hr>
+  <items-component items="itemsCtrl.items"></items-component>
+</div>

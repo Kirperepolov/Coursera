@@ -1,0 +1,13 @@
+
+<div ng-repeat = "item in $ctrl.items" class="row">
+  <div class="col-sm-3 col-xs-4">
+    {{item.name}}
+  </div>
+  <div class="col-sm-2 col-xs-4">
+    <span ng-if="item.price_small">$</span>{{item.price_small}}
+  </div>
+  <div class="col-sm-2 col-xs-4">
+    <span ng-if="item.price_large">$</span>{{item.price_large}}
+  </div>
+  <div class="col-sm-5 hidden-xs" ng-if="item.description">{{item.description}}</div>
+</div>
