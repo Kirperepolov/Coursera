@@ -4,10 +4,10 @@
     {{item.name}}
   </div>
   <div class="col-sm-2 col-xs-4">
-    <span ng-if="item.price_small">$</span>{{item.price_small}}
+    {{item.price_small | currency}}
   </div>
   <div class="col-sm-2 col-xs-4">
-    <span ng-if="item.price_large">$</span>{{item.price_large}}
+    {{item.price_large | currency}}
   </div>
   <div class="col-sm-5 hidden-xs" ng-if="item.description">{{item.description}}</div>
 </div>

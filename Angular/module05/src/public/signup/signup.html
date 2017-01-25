@@ -1,0 +1,86 @@
+<!--
+The sign up form should ask for the following information:
+- first name,
+- last name,
+- email address,
+- phone number,
+- the menu number: the favorite dish (the short_name attribute of each menu item).
+-->
+<div class="container">
+  <form name="signUpForm" novalidate>
+<!-- - first name -->
+    <div class="form-group row">
+
+      <input type="text" class="form-control" name="name" placeholder="First name..."
+          ng-model="signupCtrl.user.name"
+          required
+          min-length="4">
+      <span
+        ng-if="(signUpForm.name.$error.minlength || signUpForm.name.$error.required) && signUpForm.name.$touched">
+        The first name must be at least 4 characters long
+      </span>
+
+    </div>
+<!-- - last name -->
+    <div class="form-group row">
+
+      <input type="text" class="form-control" id="surname" name="surname" placeholder="Second name..."
+          ng-model="signupCtrl.user.surname"
+          required
+          minlength="4">
+      <span
+        ng-if="(signUpForm.surname.$error.minlength || signUpForm.surname.$error.required) && signUpForm.surname.$touched">
+        The second name must be at least 4 characters long
+      </span>
+
+    </div>
+<!-- email address -->
+    <div class="form-group row">
+
+      <input type="email" class="form-control" id="email" name="email" placeholder="Your email..."
+          ng-model="signupCtrl.user.email"
+          required>
+      <span
+        ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+
+    </div>
+<!-- phone number -->
+    <div class="form-group row">
+
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your phone number..." pattern="(\d{3})-(\d{3})-(\d{4})"
+          ng-model="signupCtrl.user.phone"
+          required>
+      <span
+        ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+        Must be a valid phone number
+      </span>
+
+    </div>
+<!-- the menu number -->
+    <div class="form-group row">
+
+      <input type="text" class="form-control" id="dish" name="dish" placeholder="Your favorite dish (in a format L(L)N(N))..."
+          ng-model="signupCtrl.user.dish" pattern="(\D{1,2})(\d{1,2})"
+          required
+          ng-minlength="2"
+          ng-maxlength="4">
+      <span
+        ng-if="(signUpForm.phone.$error.required ||
+                signUpForm.phone.$error.minlength ||
+                signUpForm.phone.$error.maxlength) &&
+                signUpForm.phone.$touched">
+        Must be favorite dish number
+      </span>
+
+    </div>
+<!-- submit button -->
+    <button
+          ng-disabled="signUpForm.$invalid"
+          ng-click="signupCtrl.submit()">
+      Submit
+    </button>
+
+  </form>
+</div>
