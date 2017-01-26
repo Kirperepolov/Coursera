@@ -1,0 +1,41 @@
+<div class="container" ng-if="userCtrl.user">
+  <div class="row">
+    <h2 class="col-md-6 text-center">User information</h2>
+    <h3 class="col-md-6 text-center hidden-xs hidden-sm">Favorite dish</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="row">
+        <div class="col-xs-5 text-right">First name:</div>
+        <div class="col-xs-7">{{userCtrl.user.name}}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-5 text-right">Second name:</div>
+        <div class="col-xs-7">{{userCtrl.user.surname}}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-5 text-right">Phone number:</div>
+        <div class="col-xs-7">{{userCtrl.user.phone}}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-5 text-right">Email address:</div>
+        <div class="col-xs-7">{{userCtrl.user.email}}</div>
+      </div>
+
+    </div>
+
+    <h3 class="text-center visible-xs visible-sm">Favorite dish</h3>
+    <menu-item menu-item="userCtrl.user.dishInfo">
+    </menu-item>
+  </div>
+
+</div>
+
+<p class="text-center" ng-if="!userCtrl.user">Not Signed Up Yet.
+  <a ui-sref="public.signup">Sign up Now!</a>
+</p>

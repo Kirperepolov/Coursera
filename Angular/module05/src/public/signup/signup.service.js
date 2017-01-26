@@ -9,11 +9,21 @@
     var service = this;
 
     service.saveUser = function(userObject){
-
-      $http.get(ApiPath+'/menu_items/'+userObject.dish+'.json')
-      .then(r=>console.log(r));
-
       service.user = userObject;
+      service.noDish = false;
+      
+      let category = service.user.dish.toUpperCase();
+      return $http.get(ApiPath+'/menu_items/'+category+'.json')
+          .then(function(r){
+
+            return r.data;
+          })
+          .catch(function(err){
+            if (+err.status===500){
+              service.noDish = true;
+            };
+            return;
+          });
 
     };
   };

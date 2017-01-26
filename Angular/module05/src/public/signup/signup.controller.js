@@ -10,7 +10,11 @@
 
     signupCtrl.user = {};
     signupCtrl.submit = function(){
-      SignUpService.saveUser(signupCtrl.user);
+      SignUpService.saveUser(signupCtrl.user)
+      .then(function(r){
+        signupCtrl.noDish = SignUpService.noDish;
+        if (r) {signupCtrl.user.dishInfo = r};
+      });
     };
   };
 

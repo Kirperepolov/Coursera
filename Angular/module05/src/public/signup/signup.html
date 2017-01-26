@@ -7,7 +7,7 @@ The sign up form should ask for the following information:
 - the menu number: the favorite dish (the short_name attribute of each menu item).
 -->
 <div class="container">
-  <form name="signUpForm" novalidate>
+  <form name="signUpForm" novalidate ng-hide="signupCtrl.user.dishInfo">
 <!-- - first name -->
     <div class="form-group row">
 
@@ -83,4 +83,10 @@ The sign up form should ask for the following information:
     </button>
 
   </form>
+  <p ng-if="signupCtrl.user.dishInfo" class="text-center">
+    Your information has been saved
+  </p>
+  <p ng-if="signupCtrl.noDish" class="text-center">
+    No such menu number exists
+  </p>
 </div>
