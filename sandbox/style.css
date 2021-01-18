@@ -1,0 +1,11 @@
+body {
+    margin: 100px auto;
+}
+
+.add-btn {
+    border-radius: 4px;
+    background-color: blue;
+    color: cornsilk;
+    font-weight: 600;
+    max-width: 1024px;
+}
